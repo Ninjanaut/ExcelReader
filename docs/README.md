@@ -33,23 +33,38 @@ from command line
 ```csharp
 using Ninjanaut.IO;
 
-var datatable = ExcelReader.ToDataTable(@"C:\FooExcel.xlsx");
+// From file path
+var path = @"C:\FooExcel.xlsx";
+var datatable = ExcelReader.ToDataTable(path);
+
+// Or from bytes
+var path = @"C:\FooExcel.xlsx";
+var bytes = File.ReadAllBytes(path);
+var datatable = ExcelReader.ToDataTable(bytes);
 ```
 
-or with options argument (the default settings)
+you can also use options argument
 
 ```csharp
 using Ninjanaut.IO;
 
-var datatable = ExcelReader.ToDataTable(@"C:\FooExcel.xlsx", new() {
-                    Format = ExcelReaderFormat.Xlsx,
-                    SheetIndex = 0,
-                    SheetName = null,
-                    HeaderRowIndex = 0,
-                    RemoveEmptyRows = true,
-                    AllowDuplicateColumns = true,
-                    MaxColumns = null
-                });
+var path = @"C:\FooExcel.xlsx";
+var options = new ExcelReaderOptions 
+{ 
+    // Default settings:
+    Format = ExcelReaderFormat.Xlsx,
+    SheetIndex = 0,
+    SheetName = null,
+    HeaderRowIndex = 0,
+    RemoveEmptyRows = true,
+    AllowDuplicateColumns = true,
+    MaxColumns = null
+});
+
+var datatable = ExcelReader.ToDataTable(path, options);
+
+// The options can be defined within the method.
+var datatable = ExcelReader.ToDataTable(path, new() { SheetName = "My Sheet" });
 ```
 
 # Notes
