@@ -11,6 +11,7 @@
     <RepositoryUrl>https://github.com/Ninjanaut/ExcelReader</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>excel reader, excel loader, excel datatable</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
