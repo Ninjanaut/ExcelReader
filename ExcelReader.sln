@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{182795F1-39FA-495B-8215-F8361842068C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C5F6D785-01FB-4C47-BBDB-E764BE049870}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{D974C54B-624F-4A6A-9AAE-7B226F44554F}"
+	ProjectSection(SolutionItems) = preProject
+		docs\README.md = docs\README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcelReader", "src\ExcelReader\ExcelReader.csproj", "{1A094530-5E62-4A80-9459-AA85AC4D94F3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcelReaderTests", "tests\ExcelReaderTests\ExcelReaderTests.csproj", "{7C63D58D-CE97-477D-885D-4D20C12CC270}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A094530-5E62-4A80-9459-AA85AC4D94F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A094530-5E62-4A80-9459-AA85AC4D94F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A094530-5E62-4A80-9459-AA85AC4D94F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A094530-5E62-4A80-9459-AA85AC4D94F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C63D58D-CE97-477D-885D-4D20C12CC270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C63D58D-CE97-477D-885D-4D20C12CC270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C63D58D-CE97-477D-885D-4D20C12CC270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C63D58D-CE97-477D-885D-4D20C12CC270}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A094530-5E62-4A80-9459-AA85AC4D94F3} = {182795F1-39FA-495B-8215-F8361842068C}
+		{7C63D58D-CE97-477D-885D-4D20C12CC270} = {C5F6D785-01FB-4C47-BBDB-E764BE049870}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF7ADBCE-865F-4773-97CC-576FDF5D83D4}
+	EndGlobalSection
+EndGlobal
