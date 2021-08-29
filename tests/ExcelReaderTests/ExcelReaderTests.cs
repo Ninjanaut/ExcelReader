@@ -3,6 +3,7 @@ using Ninjanaut.IO;
 using System;
 using System.Data;
 using System.Globalization;
+using System.IO;
 using Xunit;
 
 namespace Ninjanaut.ExcelReaderTests
@@ -337,6 +338,47 @@ namespace Ninjanaut.ExcelReaderTests
             // Excel has first sheet hidden.
             var datatable = ExcelReader.ToDataTable(@"TestData\KnownEdgeCases.xlsm",
                 new() { HeaderRowIndex = 1, SheetIndex = 1, Format = ExcelReaderFormat.Xlsm });
+
+            // Assert
+            var dt = new DataTable();
+
+            var dateValue = DateTime.ParseExact("28/08/2021", "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString();
+
+            dt.Columns.AddRange(new[]
+            {
+                new DataColumn("Column1"),
+                new DataColumn("B"),
+                new DataColumn("B_" + Guid.NewGuid().ToString("N")),
+                new DataColumn("C"),
+                new DataColumn("Column2"),
+                new DataColumn("D"),
+                new DataColumn("TRUE"),
+                new DataColumn("1"),
+                new DataColumn(dateValue),
+                new DataColumn("12.56"),
+            });
+
+            dt.AddRow(new object[] { "1", "Value of B4", "3", "", "5", "", "7", "", "", "1325,48" });
+            dt.AddRow(new object[] { "", "", "3", "", "4", "", "", "False", "", "" });
+            dt.AddRow(new object[] { "1", "7", "3", "4", dateValue, "6", "7", "", "1234.4895", "" });
+
+            Assert.NotNull(datatable);
+            Assert.Equal(3, datatable.Rows.Count);
+            DataTableAssert.ColumnsWithDuplication(datatable, dt, duplicatedColumnNumber: 3);
+            DataTableAssert.Rows(datatable, dt);
+        }
+
+        [Fact]
+        public void Load_excel_bytes_with_known_edge_cases()
+        {
+            // Arrange
+            var path = @"TestData\KnownEdgeCases.xlsx";
+            var bytes = File.ReadAllBytes(path);
+            // Excel has first sheet hidden.
+            var options = new ExcelReaderOptions { HeaderRowIndex = 1, SheetIndex = 1 };
+
+            // Act
+            var datatable = ExcelReader.ToDataTable(bytes, options);
 
             // Assert
             var dt = new DataTable();
