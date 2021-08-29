@@ -21,7 +21,7 @@ from command line
 |   | Options   | Defaults  | Notes |
 | -                                 | -                         | -         | - |
 | Supports xsl, xlsx and xlsm formats   | Format                    | xlsx      |
-| Loading via sheet position or name         | SheetIndex  or SheetName  | SheetIndex = 0      |
+| Loading via sheet position or name         | SheetIndex  or SheetName  | SheetIndex = 0      | Setting both will throw `ArgumentException`
 | Skip top rows                     | HeaderRowIndex            | 0         |
 | Remove empty rows                 | RemoveEmptyRows           | true      |
 | Allow duplicate columns          | AllowDuplicateColumns    | true      | Duplicated column will be loaded as `<column name>_<guid>`
