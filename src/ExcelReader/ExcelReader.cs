@@ -11,10 +11,10 @@ namespace Ninjanaut.IO
     public static class ExcelReader
     {
         /// <summary>
-        /// Returns DataTable object from excel bytes with values loaded as strings.
+        /// Returns datatable object from the excel file with values retrieved as strings.
         /// </summary>
         /// <param name="bytes">Excel file bytes.</param>
-        /// <param name="options">The Options object allows to change the default settings.</param>
+        /// <param name="options">Settings you might want to change.</param>
         public static DataTable ToDataTable(byte[] bytes, ExcelReaderOptions options = null)
         {
             if (bytes == null) throw new ArgumentNullException(nameof(bytes));
@@ -34,10 +34,10 @@ namespace Ninjanaut.IO
 
 
         /// <summary>
-        /// Returns DataTable object from excel file with values loaded as strings.
+        /// Returns datatable object from the excel file with values retrieved as strings.
         /// </summary>
-        /// <param name="path">A relative or absolute path of the excel file.</param>
-        /// <param name="options">The Options object allows to change the default settings.</param>
+        /// <param name="path">Relative or absolute path to the excel file.</param>
+        /// <param name="options">Settings you might want to change.</param>
         public static DataTable ToDataTable(string path, ExcelReaderOptions options = null)
         {
             if (string.IsNullOrEmpty(path)) throw new ArgumentNullException(nameof(path));

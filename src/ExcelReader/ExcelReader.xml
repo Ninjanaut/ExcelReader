@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExcelReader</name>
+    </assembly>
+    <members>
+        <member name="M:Ninjanaut.IO.ExcelReader.ToDataTable(System.Byte[],Ninjanaut.IO.ExcelReaderOptions)">
+            <summary>
+            Returns datatable object from the excel file with values retrieved as strings.
+            </summary>
+            <param name="bytes">Excel file bytes.</param>
+            <param name="options">Settings you might want to change.</param>
+        </member>
+        <member name="M:Ninjanaut.IO.ExcelReader.ToDataTable(System.String,Ninjanaut.IO.ExcelReaderOptions)">
+            <summary>
+            Returns datatable object from the excel file with values retrieved as strings.
+            </summary>
+            <param name="path">Relative or absolute path to the excel file.</param>
+            <param name="options">Settings you might want to change.</param>
+        </member>
+        <member name="P:Ninjanaut.IO.ExcelReaderOptions.Format">
+            <summary>
+            Default format is XLSX.
+            </summary>
+        </member>
+        <member name="P:Ninjanaut.IO.ExcelReaderOptions.SheetIndex">
+            <summary>
+            The index of the excel sheet that you want to convert to a datatable object.
+            Setting SheetIndex with SheetName will throw an exception.
+            If SheetName is not set, the default value is 0.
+            </summary>
+        </member>
+        <member name="P:Ninjanaut.IO.ExcelReaderOptions.SheetName">
+            <summary>
+            The name of the excel sheet that you want to convert to a datatable object.
+            Setting SheetName with SheetIndex will throw an exception.
+            </summary>
+        </member>
+        <member name="P:Ninjanaut.IO.ExcelReaderOptions.MaxColumns">
+            <summary>
+            Default value is null. I recommend setting this value so that you don't accidentally load empty columns.
+            </summary>
+        </member>
+        <member name="P:Ninjanaut.IO.ExcelReaderOptions.HeaderRowIndex">
+            <summary>
+            Default value is 0.
+            </summary>
+        </member>
+        <member name="P:Ninjanaut.IO.ExcelReaderOptions.RemoveEmptyRows">
+            <summary>
+            Default value is true.
+            </summary>
+        </member>
+        <member name="P:Ninjanaut.IO.ExcelReaderOptions.AllowDuplicateColumns">
+            <summary>
+            Default value is true.
+            </summary>
+        </member>
+    </members>
+</doc>
