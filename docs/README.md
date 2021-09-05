@@ -3,6 +3,9 @@
 Welcome to the project website! ExcelReader is lightweight C# library to ease 
 loading data from Excel file into DataTable object, based on NPOI library.
 
+> If you need to load XLSB format, consider to use binary excel reader 
+> [Ninjanaut.BinaryExcelReader](https://github.com/Ninjanaut/BinaryExcelReader) 
+ 
 # Installation
 
 from nuget package manager console
