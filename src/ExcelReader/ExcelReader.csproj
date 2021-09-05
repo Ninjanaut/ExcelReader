@@ -1,17 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <PackageId>Ninjanaut.ExcelReader</PackageId>
     <Authors>Ninjanaut</Authors>
     <Company>Ninjanaut</Company>
-    <Description>Lightweight C# library to ease  loading data from Excel file into DataTable object, based on NPOI library. Supports xls, xlsx and xlsm formats.</Description>
+    <Description>Lightweight C# library to ease loading data from Excel file into DataTable object, based on NPOI library. Supports xls, xlsx and xlsm formats.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Ninjanaut/ExcelReader</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Ninjanaut/ExcelReader</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>excel reader, excel loader, excel datatable</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\Lukas\Desktop\Documents\workspace\GitHub\ExcelReader\src\ExcelReader\ExcelReader.xml</DocumentationFile>
+    <NoWarn>1701;1702;CS1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
